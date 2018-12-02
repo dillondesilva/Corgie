@@ -9,10 +9,14 @@ class NewBook extends React.Component {
     swal("Book name", {
       content: "input",
     }).then((value) => {
-      database.ref('books/').set({
-        bookName: value
-      })
-      swal('Book successfully created');
+      if (value === '') {
+        swal('Dude! Give your book a name!');
+      } else {
+        database.ref('books/').set({
+          bookName: value
+        })
+        swal('Book successfully created');
+      }
     });
   } 
 
