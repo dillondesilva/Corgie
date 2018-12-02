@@ -1,11 +1,15 @@
 import React from 'react';
+import swal from 'sweetalert';
 
 class Main extends React.Component {
+  // newBook() allows the user to create a new workbook
   newBook () {
-    // This is a stub. newBook() will 
-    // allow the user to create a new set/group 
-    // of notes. Eg: A new science book
-  }
+    swal("Book name", {
+      content: "input",
+    }).then((value) => {
+      // Stub code. Push value to Database to create new book
+    });
+    
 
   render () {
     return (
