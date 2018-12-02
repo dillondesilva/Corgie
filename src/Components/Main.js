@@ -1,15 +1,20 @@
 import React from 'react';
 import swal from 'sweetalert';
+import firebase from 'firebase';
 
 class Main extends React.Component {
   // newBook() allows the user to create a new workbook
   newBook () {
+    let database = firebase.database();
     swal("Book name", {
       content: "input",
     }).then((value) => {
-      // Stub code. Push value to Database to create new book
+      database.ref('books/').set({
+        bookName: value
+      })
+      swal('Book successfully created');
     });
-    
+  }
 
   render () {
     return (
