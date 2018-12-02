@@ -5,6 +5,7 @@ class Main extends React.Component {
     return (
       <div>
         <h1>Dashboard</h1>
+        <button>New Book +</button>
       </div>
     )
   }
