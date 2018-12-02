@@ -4,13 +4,17 @@ import './App.css';
 
 // Importing Components
 import Home from './Components/Home';
+import Main from './Components/Main';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Router>
-          <Route exact path='/' component={Home}/>
+          <div>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/dashboard' component={Main}/>
+          </div>
         </Router>
       </div>
     );
